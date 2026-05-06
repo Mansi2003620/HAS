@@ -1,0 +1,184 @@
+<div class="patient-dashboard">
+    <!-- everything inside patient page -->
+
+
+<div class="container mt-4" *ngIf="!loading && patient; else loadingTemplate">
+  <h2 class="mb-4 text-primary">
+    👋 Welcome, {{ patient?.user?.name || patient?.name || 'Patient' }}
+  </h2>
+
+  <!--  Patient Details Card -->
+  <div class="card p-3 mb-4 shadow-sm">
+    <h4 class="text-secondary mb-3">Your Details</h4>
+
+    <p><b>Email:</b> {{ patient?.user?.email || 'N/A' }}</p>
+    <p><b>Phone:</b> {{ patient?.phone || 'N/A' }}</p>
+    <p><b>Address:</b> {{ patient?.address || 'N/A' }}</p>
+    <p><b>Age:</b> {{ patient?.age || 'N/A' }}</p>
+    <p><b>Gender:</b> {{ patient?.gender || 'N/A' }}</p>
+
+    <div class="profile-actions">
+      
+
+      <button class="btn-edit-profile" (click)="onEdit()"> Edit Profile</button>
+      <button class="btn-logout" (click)="logout()"> Logout</button>
+    </div>
+  </div>
+
+<div class="action-board">
+  <button class="btn btn-success me-2" (click)="bookAppointment()">Book Appointment</button>
+      <button class="btn btn-info" (click)="viewMedicalHistory()"> View Medical History</button>
+</div>
+
+  
+  <!-- <div *ngIf="medicalHistories.length > 0" class="mb-4">
+    <h3>Medical History</h3>
+    <ul class="list-group">
+      <li *ngFor="let history of medicalHistories" class="list-group-item">
+        <b>Date:</b>
+        {{ history.recorddate ? (history.recorddate | date:'mediumDate') : 'N/A' }} |
+        <b>Diagnosis:</b> {{ history.diagnosis || 'N/A' }}
+        <button class="btn-view" (click)="viewPrescription(history.id)">
+          💊 View Prescription
+        </button>
+      </li>
+    </ul>
+  </div> -->
+
+  
+  <!-- <div *ngIf="prescriptions.length > 0" class="mb-4">
+    <h3>Prescriptions</h3>
+    <ul class="list-group">
+      <li *ngFor="let pres of prescriptions" class="list-group-item">
+        <b>Medicine:</b> {{ pres.medicineName }},
+        <b>Dosage:</b> {{ pres.dosage }},
+        <b>Duration:</b> {{ pres.duration }}
+      </li>
+    </ul>
+  </div>  -->
+  <!-- 🏥 Medical History Table -->
+<div *ngIf="medicalHistories.length > 0" class="medical-history mb-4">
+  <h3>Medical History</h3>
+  <table class="table table-bordered table-striped align-middle">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Diagnosis</th>
+        <th>Notes</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let history of medicalHistories">
+        <td>{{ history.recorddate ? (history.recorddate | date:'mediumDate') : 'N/A' }}</td>
+        <td>{{ history.diagnosis || 'N/A' }}</td>
+        <td>{{ history.notes || 'N/A' }}</td>
+        <td>
+          <button class="btn-view" (click)="viewPrescription(history.id)">💊 View Prescription</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 💊 Prescriptions Table -->
+<div *ngIf="prescriptions.length > 0" class="prescriptions mb-4">
+  <h3>Prescriptions</h3>
+  <table class="table table-bordered table-striped align-middle">
+    <thead>
+      <tr>
+        <th>Medicine</th>
+        <th>Dosage</th>
+        <th>Duration</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pres of prescriptions">
+        <td>{{ pres.medicineName || 'N/A' }}</td>
+        <td>{{ pres.dosage || 'N/A' }}</td>
+        <td>{{ pres.duration || 'N/A' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+  <!-- 📅 Appointments Section -->
+  <div class="appointments mt-4">
+    <h4 class="text-secondary mb-3">Your Appointments</h4>
+
+    <div *ngIf="appointments && appointments.length > 0; else noAppointments">
+      <table class="table table-bordered table-striped align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of appointments">
+            <!-- 🩺 Doctor -->
+            <td>{{ a.doctorName || 'Unknown' }}</td>
+
+            <!-- 📅 Date -->
+            <td>{{ a.appointmentDate || a.date || a.dateTime | date: 'medium' }}</td>
+
+            <!-- 🔖 Status -->
+            <td>
+              <span
+                class="badge px-3 py-2"
+                [ngClass]="{
+                  'bg-success': a.status === 'Confirmed',
+                  'bg-danger': a.status === 'Cancelled',
+                  'bg-warning text-dark': a.status === 'Pending'
+                }"
+              >
+                {{ a.status || 'Pending' }}
+              </span>
+            </td>
+
+            <!-- ⚙️ Actions -->
+            <td class="text-center">
+              <button
+                class="btn-edit"
+                (click)="onEditAppointment(a.id)"
+                [disabled]="a.status === 'Cancelled'"
+              >
+                 Edit
+              </button>
+
+              <button
+                *ngIf="a.status !== 'Cancelled'"
+                class="btn-delete"
+                (click)="onCancel(a.id)"
+              >
+                 Cancel
+              </button>
+
+              <span *ngIf="a.status === 'Cancelled'" class="text-muted fst-italic">
+                Cancelled
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 🚫 No Appointments -->
+    <ng-template #noAppointments>
+      <p class="text-muted fst-italic">No appointments found.</p>
+    </ng-template>
+  </div>
+</div>
+
+<!-- ⏳ Loading Template -->
+<ng-template #loadingTemplate>
+  <div class="text-center mt-5">
+    <div class="spinner-border text-primary" role="status"></div>
+    <p class="mt-3">Loading patient data...</p>
+  </div>
+</ng-template>
+</div>

@@ -1,0 +1,42 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="mb-0">
+      
+      {{ isFilteredView ? 'Prescriptions for Medical History' : 'All Prescriptions (Admin View)' }}
+    </h3>
+  </div>
+
+  <table
+    class="table table-hover table-bordered table-striped"
+    *ngIf="prescriptions.length > 0; else noData"
+  >
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Medicine</th>
+        <th>Dosage</th>
+        
+        <th>Duration</th>
+        <th>Medical History ID</th>
+       
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let p of prescriptions; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ p.medicineName }}</td>
+        <td>{{ p.dosage }}</td>
+        <td>{{ p.duration }}</td>
+        <td>{{ p.medicalHistory?.id || p.medicalHistoryId }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noData>
+    <div class="alert alert-info text-center mt-4">
+      No prescriptions found
+      {{ isFilteredView ? 'for this medical history.' : 'in the system.' }}
+    </div>
+  </ng-template>
+</div>

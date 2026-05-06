@@ -1,0 +1,316 @@
+/* 🌸 ============================================= */
+/* 🌸 Patient Dashboard Enhancements (Final Touch)  */
+/* 🌸 ============================================= */
+
+.patient-dashboard h2,
+.patient-dashboard h3,
+.patient-dashboard h4 {
+  text-align: center;
+  color: #701b56;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* 🌸 Welcome text */
+.patient-dashboard h2 {
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+/* 🌸 Edit Profile Button */
+.patient-dashboard .btn-edit-profile {
+  background-color: #8a1f6b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 3px 6px rgba(138, 31, 107, 0.3);
+}
+
+.patient-dashboard .btn-edit-profile:hover {
+  background-color: #a44fa2;
+  transform: scale(1.05);
+  box-shadow: 0 5px 10px rgba(138, 31, 107, 0.4);
+}
+
+/* 🌸 Consistent Section Titles */
+.section-title,
+.medical-history h3,
+.prescriptions h3,
+.appointments h4 {
+  text-align: center;
+  color: #701b56;
+  font-weight: 700;
+  font-size: 2rem; /* increased font size */
+  margin-top: 40px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* 🌸 Patient Details Card */
+.patient-dashboard .card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
+  width: 85%;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  padding: 30px 40px;
+  color: #4b164a;
+}
+
+.patient-dashboard .card h4 {
+  color: #701b56;
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.patient-dashboard .card p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #6a1b5a;
+  margin: 10px 0;
+}
+
+/* 🌸 Action Buttons (Book & View Medical History) */
+.patient-dashboard .action-board {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
+  width: 85%;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  padding: 25px 30px;
+  text-align: center;
+}
+
+.patient-dashboard .action-board .btn {
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 12px 28px;
+  margin: 10px 15px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+/* 🌸 Book Appointment (primary violet) */
+.patient-dashboard .btn-success {
+  background-color: #8a1f6b;
+}
+
+.patient-dashboard .btn-success:hover {
+  background-color: #9f2b7e;
+  transform: scale(1.05);
+}
+
+/* 🌸 View Medical History — same color as Book Appointment */
+.patient-dashboard .btn-info {
+  background-color: #8a1f6b;
+}
+
+.patient-dashboard .btn-info:hover {
+  background-color: #9f2b7e;
+  transform: scale(1.05);
+}
+
+/* 🌸 Table Styling */
+.patient-dashboard table {
+  width: 90%;
+  max-width: 1100px;
+  margin: 25px auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
+}
+
+.patient-dashboard thead {
+  background-color: #701b56;
+  color: #fff;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.patient-dashboard th,
+.patient-dashboard td {
+  padding: 14px 18px;
+  text-align: center;
+  border-right: 1px solid #e1bfe1;
+}
+
+.patient-dashboard td:last-child {
+  border-right: none;
+}
+
+.patient-dashboard tbody tr:nth-child(odd) {
+  background-color: #fdf5fc;
+}
+
+.patient-dashboard tbody tr:nth-child(even) {
+  background-color: #f8ebf7;
+}
+
+.patient-dashboard tbody tr:hover {
+  background-color: #f3ddef;
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+}
+
+/* 🌸 View Prescription Button */
+.patient-dashboard .btn-view {
+  border: none;
+  background-color: #701b56;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.patient-dashboard .btn-view:hover {
+  background-color: #8a1f6b;
+  transform: scale(1.05);
+}
+
+/* 🌸 Edit & Delete Buttons */
+.patient-dashboard .btn-edit {
+  background-color: #ffb84d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.patient-dashboard .btn-edit:hover {
+  background-color: #ff9900;
+  transform: scale(1.05);
+}
+
+.patient-dashboard .btn-delete {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.patient-dashboard .btn-delete:hover {
+  background-color: #d93636;
+  transform: scale(1.05);
+}
+
+/* 🌸 Medical History & Prescriptions Tables */
+.medical-history table,
+.prescriptions table {
+  width: 90%;
+  margin: 20px auto;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.medical-history thead,
+.prescriptions thead {
+  background-color: #701b56;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.medical-history th,
+.medical-history td,
+.prescriptions th,
+.prescriptions td {
+  padding: 14px 18px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 15px;
+  border-right: 1px solid #e1bfe1;
+}
+
+.medical-history tbody tr:nth-child(even),
+.prescriptions tbody tr:nth-child(even) {
+  background-color: #f9ebf7;
+}
+
+.medical-history tbody tr:nth-child(odd),
+.prescriptions tbody tr:nth-child(odd) {
+  background-color: #fdf5fc;
+}
+
+.medical-history tbody tr:hover,
+.prescriptions tbody tr:hover {
+  background-color: #f3ddef;
+  transform: scale(1.01);
+  transition: all 0.3s ease;
+}
+
+/* 🌸 Responsive */
+@media (max-width: 768px) {
+  .patient-dashboard table {
+    width: 95%;
+    font-size: 13px;
+  }
+  .patient-dashboard th,
+  .patient-dashboard td {
+    padding: 10px 8px;
+  }
+}
+/* 🌸 Center both buttons horizontally */
+.profile-actions {
+  display: flex;
+  justify-content: center; /* ⬅️ centers them */
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* ✏️ Edit Button */
+.btn-edit-profile {
+  background-color: #8a1f6b;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(138, 31, 107, 0.3);
+}
+
+.btn-edit-profile:hover {
+  background-color: #9f2b7e;
+  transform: scale(1.05);
+}
+
+/* 🚪 Logout Button */
+.btn-logout {
+  background-color: #d63031; /* red for logout */
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(214, 48, 49, 0.3);
+}
+
+.btn-logout:hover {
+  background-color: #b32425;
+  transform: scale(1.05);
+}

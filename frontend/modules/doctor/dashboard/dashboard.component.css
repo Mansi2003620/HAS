@@ -1,0 +1,408 @@
+.doctor-dashboard {
+  font-family: "Poppins", sans-serif;
+  background-color: #fdf5fc;
+  padding: 30px 0;
+  min-height: 100vh;
+}
+
+/*  Headings */
+.doctor-dashboard h2,
+.doctor-dashboard h3,
+.doctor-dashboard h4 {
+  text-align: center;
+  color: #701b56;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.doctor-dashboard h2 {
+  font-size: 2rem;
+  margin-top: 15px;
+}
+
+/*  Doctor Details Card */
+.doctor-dashboard .card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
+  width: 85%;
+  max-width: 950px;
+  margin: 0 auto 40px auto;
+  padding: 30px 40px;
+  color: #4b164a;
+}
+
+.doctor-dashboard .card h4 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #701b56;
+  margin-bottom: 20px;
+}
+
+.doctor-dashboard .card p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #6a1b5a;
+  margin: 8px 0;
+}
+
+/*  Buttons inside Doctor Details Card */
+.doctor-dashboard .card .btn {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 10px 18px;
+  margin: 6px 8px;
+  transition: all 0.3s ease;
+  color: #fff;
+  box-shadow: 0 3px 6px rgba(138, 31, 107, 0.25);
+}
+
+.doctor-dashboard .btn-primary {
+  background-color: #701b56;
+}
+.doctor-dashboard .btn-primary:hover {
+  background-color: #8a1f6b;
+  transform: scale(1.05);
+}
+
+.doctor-dashboard .btn-success {
+  background-color: #8a1f6b;
+}
+.doctor-dashboard .btn-success:hover {
+  background-color: #9f2b7e;
+  transform: scale(1.05);
+}
+
+.doctor-dashboard .btn-warning {
+  background-color: #bb64b6;
+  border: none;
+}
+.doctor-dashboard .btn-warning:hover {
+  background-color: #9f2b7e;
+  transform: scale(1.05);
+}
+
+.doctor-dashboard .btn-secondary {
+  background-color: #a44fa2;
+}
+.doctor-dashboard .btn-secondary:hover {
+  background-color: #701b56;
+  transform: scale(1.05);
+}
+
+.doctor-dashboard .btn-dark {
+  background-color: #4b164a;
+}
+.doctor-dashboard .btn-dark:hover {
+  background-color: #701b56;
+  transform: scale(1.05);
+}
+
+/*  Appointments Section */
+.appointments-section {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.appointments-section h3 {
+  font-size: 1.8rem;
+  color: #701b56;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/*  Table Styling */
+.appointments-section table {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto 30px auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
+}
+
+.appointments-section thead {
+  background-color: #701b56;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 15px;
+}
+
+.appointments-section th,
+.appointments-section td {
+  padding: 14px 18px;
+  text-align: center;
+  border-right: 1px solid #e1bfe1;
+}
+
+.appointments-section td:last-child {
+  border-right: none;
+}
+
+.appointments-section tbody tr:nth-child(odd) {
+  background-color: #fdf5fc;
+}
+
+.appointments-section tbody tr:nth-child(even) {
+  background-color: #f8ebf7;
+}
+
+.appointments-section tbody tr:hover {
+  background-color: #f3ddef;
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+}
+
+/*  Action Buttons in Table */
+.appointments-section .btn-danger {
+  background-color: #ff4d4d;
+  border: none;
+}
+.appointments-section .btn-danger:hover {
+  background-color: #d93636;
+  transform: scale(1.05);
+}
+
+.appointments-section .btn-info {
+  background-color: #8a1f6b;
+  border: none;
+}
+.appointments-section .btn-info:hover {
+  background-color: #9f2b7e;
+  transform: scale(1.05);
+}
+
+.appointments-section .btn-warning {
+  background-color: #ffb84d;
+  border: none;
+}
+.appointments-section .btn-warning:hover {
+  background-color: #ff9900;
+  transform: scale(1.05);
+}
+
+.appointments-section .btn-success {
+  background-color: #701b56;
+  border: none;
+}
+.appointments-section .btn-success:hover {
+  background-color: #8a1f6b;
+  transform: scale(1.05);
+}
+
+/*  Error & Loading */
+.text-center h4 {
+  color: #701b56;
+}
+
+.alert {
+  max-width: 700px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*  Responsive */
+@media (max-width: 768px) {
+  .doctor-dashboard .card {
+    width: 95%;
+    padding: 20px;
+  }
+  .appointments-section table {
+    width: 95%;
+    font-size: 13px;
+  }
+  .appointments-section th,
+  .appointments-section td {
+    padding: 10px 8px;
+  }
+ 
+
+/* General button base for all actions */
+.btn-action {
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 9px 18px;
+  color: #fff;
+  margin: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(112, 27, 86, 0.25);
+}
+
+/*  Cancel Button — Vibrant Red */
+.btn-cancel {
+  background-color: #e63946; /* bright red */
+  box-shadow: 0 4px 10px rgba(230, 57, 70, 0.4);
+}
+.btn-cancel:hover {
+  background-color: #c92430; /* darker red */
+  transform: scale(1.06);
+}
+
+/*  View History — Deep Mulberry */
+.btn-view-history {
+  background-color: #701b56; /* rich mulberry */
+  box-shadow: 0 4px 10px rgba(112, 27, 86, 0.4);
+}
+.btn-view-history:hover {
+  background-color: #8a1f6b;
+  transform: scale(1.06);
+}
+
+/*  Add History — Soft Violet */
+.btn-add-history {
+  background-color: #8a1f6b;
+  box-shadow: 0 4px 10px rgba(138, 31, 107, 0.4);
+}
+.btn-add-history:hover {
+  background-color: #9f2b7e;
+  transform: scale(1.06);
+}
+
+/*  Prescribe — Bright Mulberry-Pink */
+.btn-prescribe {
+  background-color: #b44ba0; /* pinkish mulberry */
+  box-shadow: 0 4px 10px rgba(180, 75, 160, 0.4);
+}
+.btn-prescribe:hover {
+  background-color: #9a3c8b;
+  transform: scale(1.06);
+}
+
+/* Group Layout */
+.action-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+}
+
+/* General button base for all actions */
+.btn-action {
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 9px 18px;
+  color: #fff;
+  margin: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(112, 27, 86, 0.25);
+}
+
+/*  Cancel Button — Deep Red */
+.btn-cancel {
+  background-color: #d63031; /* deep red */
+  box-shadow: 0 4px 10px rgba(214, 48, 49, 0.4);
+}
+.btn-cancel:hover {
+  background-color: #b32425;
+  transform: scale(1.06);
+}
+
+/*  View History — Deep Mulberry */
+.btn-view-history {
+  background-color: #6d1b5b; /* deeper mulberry */
+  box-shadow: 0 4px 10px rgba(109, 27, 91, 0.4);
+}
+.btn-view-history:hover {
+  background-color: #8a2d73;
+  transform: scale(1.06);
+}
+
+/*  Add History — Medium Violet */
+.btn-add-history {
+  background-color: #853175; /* medium violet */
+  box-shadow: 0 4px 10px rgba(133, 49, 117, 0.4);
+}
+.btn-add-history:hover {
+  background-color: #9b3d85;
+  transform: scale(1.06);
+}
+
+/*  Prescribe — Plum Pink */
+.btn-prescribe {
+  background-color: #a84c9c; /* soft plum pink */
+  box-shadow: 0 4px 10px rgba(168, 76, 156, 0.4);
+}
+.btn-prescribe:hover {
+  background-color: #bf5faf;
+  transform: scale(1.06);
+}
+
+/* Group Layout (unchanged) */
+.action-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+
+
+.action-board {
+  background-color: #ffffff;
+  width: 85%;
+  max-width: 950px;
+  margin: 30px auto;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(112, 27, 86, 0.15);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.action-board:hover {
+  box-shadow: 0 10px 30px rgba(112, 27, 86, 0.25);
+  transform: translateY(-3px);
+}
+
+.action-board h3 {
+  color: #701b56;
+  font-weight: 700;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+/*  Logout Button Styling */
+.logout-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  margin: 10px auto 20px auto;
+}
+
+.btn-logout {
+  background-color: #d63031; /* elegant deep red */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(214, 48, 49, 0.3);
+}
+
+.btn-logout:hover {
+  background-color: #b32425;
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(179, 36, 37, 0.4);
+}
+

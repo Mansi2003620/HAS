@@ -1,0 +1,48 @@
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+
+@Component({
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
+})
+export class SignupComponent {
+  user:any={name:'',email:'',password:'',role:''};
+  patient:any={address:'',phone:'',age:'',gender:'',medicalHistory:''};
+  doctor:any={email:'',specialization:'',experiene:''};
+
+  
+  constructor(private router:Router,private http: HttpClient){}
+  onSubmit(){
+    console.log('User:',this.user);
+
+    let payload={ ...this.user};
+    let url=''
+    if(this.user.role === 'PATIENT'){
+      payload={...payload,...this.patient};
+      url = 'http://localhost:8080/patients/register'; 
+    }
+    else if(this.user.role === 'DOCTOR'){
+      payload={...payload,...this.doctor};
+      url='http://localhost:8080/doctors/register'; 
+    }
+   console.log('final Payload:',payload);
+
+    this.http.post('http://localhost:8080/users/register',payload).subscribe({
+      next:(res) =>{
+        console.log('Registartion successfull',res);
+        alert('Registration successfull');
+        this.router.navigate(['/user/login']);
+      },
+      error:(err) =>{
+        console.error("registration failed:",err);
+        alert("registration failed.Please try again");
+      }
+    });
+  }
+
+
+  
+}
+

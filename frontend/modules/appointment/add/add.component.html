@@ -1,0 +1,44 @@
+<div class="book-page">
+  <div class="book-container">
+    <div class="book-card">
+      <h2>Book Appointment</h2>
+
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group mb-3">
+          <label>Patient ID</label>
+          <input
+            type="number"
+            [(ngModel)]="appointment.patientId"
+            name="patientId"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div class="form-group mb-3">
+          <label>Doctor ID</label>
+          <input
+            type="number"
+            [(ngModel)]="appointment.doctorId"
+            name="doctorId"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div class="form-group mb-3">
+          <label>Date & Time</label>
+          <input
+            type="datetime-local"
+            [(ngModel)]="appointment.date"
+            name="date"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn">Book Appointment</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="signup-page">
+  <div class="signup-container">
+    <div class="signup-card">
+      <h2>Create Account</h2>
+
+      <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+        <!-- Common Fields -->
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" name="name" [(ngModel)]="user.name" required />
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" [(ngModel)]="user.email" required />
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" name="password" [(ngModel)]="user.password" required />
+        </div>
+
+        <div class="form-group">
+          <label>Role</label>
+          <select name="role" [(ngModel)]="user.role" required>
+            <option value="">Select Role</option>
+            <option value="PATIENT">Patient</option>
+            <option value="DOCTOR">Doctor</option>
+          </select>
+        </div>
+
+        <!-- Conditional Fields for Patient -->
+        <div *ngIf="user.role === 'PATIENT'">
+          <h3>Patient Details</h3>
+          <input type="text" placeholder="Address" [(ngModel)]="patient.address" name="address" />
+          <input type="text" placeholder="Phone" [(ngModel)]="patient.phone" name="phone" />
+          <input type="number" placeholder="Age" [(ngModel)]="patient.age" name="age" />
+          <input type="text" placeholder="Gender" [(ngModel)]="patient.gender" name="gender" />
+          <textarea placeholder="Medical History" [(ngModel)]="patient.medicalHistory" name="medicalHistory"></textarea>
+        </div>
+
+        <!-- Conditional Fields for Doctor -->
+        <div *ngIf="user.role === 'DOCTOR'">
+          <h3>Doctor Details</h3>
+          <input type="email" placeholder="Email" [(ngModel)]="doctor.email" name="docEmail" />
+          <input type="text" placeholder="Specialization" [(ngModel)]="doctor.specialization" name="specialization" />
+          <input type="text" placeholder="Experience" [(ngModel)]="doctor.experience" name="experience" />
+        </div>
+
+        <button type="submit" class="btn">Register</button>
+      </form>
+    </div>
+  </div>
+</div>

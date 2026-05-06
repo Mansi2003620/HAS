@@ -1,0 +1,131 @@
+<div class="dashboard-container">
+    <button class="logout-btn" (click)="logout()">Logout</button>
+
+  <h1 class="dashboard-title">Admin Dashboard</h1>
+
+  <div class="stats-grid">
+    <!-- Doctor Card -->
+    <div class="card">
+      <h2>Doctors</h2>
+      <p class="count">{{ stats.doctors }}</p>
+      <div class="actions">
+        <button (click)="navigateTo('/doctor/add')">Add</button>
+        <button (click)="navigateTo('/doctor/list')">List</button>
+        
+    </div>
+
+    <!-- Patient Card -->
+    <div class="card">
+      <h2>Patients</h2>
+      <p class="count">{{ stats.patients }}</p>
+      <div class="actions">
+        <button (click)="navigateTo('/patient/add')">Add</button>
+        <button (click)="navigateTo('/patient/list')">List</button>
+      </div>
+    </div>
+
+    <!-- Appointment Card -->
+    <div class="card">
+      <h2>Appointments</h2>
+      <p class="count">{{ stats.appointments }}</p>
+      <div class="actions">
+        <button (click)="navigateTo('/appointment/add')">Add</button>
+        <button (click)="navigateTo('/appointment/list')">List</button>
+      </div>
+    </div>
+
+    <!-- Prescription Card -->
+    <div class="card">
+      <h2>Prescriptions</h2>
+      <p class="count">{{ stats.prescriptions }}</p>
+      <div class="actions">
+        <button (click)="navigateTo('/prescription/list')">List</button>
+      </div>
+    </div>
+
+    <!-- Medical History Card -->
+    <div class="card">
+      <h2>Medical Histories</h2>
+      <p class="count">{{ stats.medicalHistories }}</p>
+      <div class="actions">
+        <button (click)="navigateTo('/medical-history/list')">List</button>
+      </div>
+    </div>
+
+    <!-- User Card -->
+    <div class="card">
+      <h2>Users</h2>
+      <p class="count">{{ stats.users }}</p>
+      <div class="actions">
+        <button (click)="navigateTo('/user/add')">Add</button>
+        <button (click)="navigateTo('/user/list')">List</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="actions" style="text-align:center; margin-top:20px;">
+    <button class="btn-toggle-dashboards"  (click)="toggleViewDashboards()">
+      {{ showDashboards ? 'Hide Dashboards' : 'View Dashboards' }}
+    </button>
+  </div>
+  <div class="view-dashboards" *ngIf="showDashboards">
+
+    <h2>View Dashboards</h2>
+
+    <!-- Doctors Table -->
+    <div class="sub-section">
+      <h3>Doctors</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Specialization</th>
+            <th>Email</th>
+            <th>Dashboard</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let doc of doctors">
+            <td>{{ doc.id }}</td>
+            <td>{{ doc.name }}</td>
+            <td>{{ doc.specialization }}</td>
+            <td>{{ doc.email }}</td>
+            <td>
+              <button  class="btn-view-dashboard" (click)="viewDoctorDashboard(doc.id)">Dashboard</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Patients Table -->
+    <div class="sub-section">
+      <h3>Patients</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Dashboard</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let patient of patients">
+            <td>{{ patient.id }}</td>
+            <td>{{ patient.name }}</td>
+            <td>{{ patient.user?.email }}</td>
+            <td>{{ patient.phone }}</td>
+            <td>
+              <button class="btn-view-dashboard"  (click)="viewPatientDashboard(patient.id)">Dashboard</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+ 

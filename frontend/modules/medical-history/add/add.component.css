@@ -1,0 +1,123 @@
+/* 🌸 Page background */
+.medical-history-page {
+  background-color: #eed6eb; /* soft mulberry violet */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 🌸 Center container */
+.medical-history-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* 🌸 White card */
+.medical-history-card {
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 18px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  width: 420px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.medical-history-card:hover {
+  transform: translateY(-5px);
+}
+
+/* 🌸 Heading */
+h2 {
+  color: #701b56;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* 🌸 Form styling */
+.form-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #4a1d38;
+}
+
+/* 🌸 Inputs and Textarea */
+input,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #d1a3c4;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  margin-bottom: 10px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #701b56;
+  box-shadow: 0 0 6px rgba(112, 27, 86, 0.3);
+}
+
+/* 🌸 Button */
+.btn {
+  background-color: #701b56;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 45px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: #8a1f6b;
+  transform: translateY(-2px);
+}
+
+/* 🌸 Secondary Button */
+.btn-secondary {
+  background-color: #8a1f6b;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  padding: 12px 45px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  margin-top: 10px;
+}
+
+.btn-secondary:hover {
+  background-color: #701b56;
+  transform: translateY(-2px);
+}
+
+/* 🌸 Responsive */
+@media (max-width: 480px) {
+  .medical-history-card {
+    width: 90%;
+    padding: 30px 25px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}

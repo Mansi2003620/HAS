@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <h2>Patient List</h2>
+
+  <button class="btn btn-primary" routerLink="/patient/add">Add New Patient</button>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Medical History</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of patients">
+        <td>{{ p.id }}</td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.phone }}</td>
+        <td>{{ p.age }}</td>
+        <td>{{ p.gender }}</td>
+        <td>{{ p.medicalHistory }}</td>
+        <td>
+          <button class="btn btn-warning" (click)="onEdit(p.id)">Edit</button>
+          <button class="btn btn-danger" (click)="onDelete(p.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="patients.length === 0" class="alert alert-info">
+    No patients found
+  </div>
+</div>

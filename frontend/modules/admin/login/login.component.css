@@ -1,0 +1,93 @@
+/*  Page Background */
+.admin-login {
+  background: linear-gradient(135deg, #f3dff0, #eed6eb); /* Soft Mulberry Violet gradient */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/*  Login Card */
+.admin-login form {
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(112, 27, 86, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.admin-login form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(112, 27, 86, 0.25);
+}
+
+/*  Heading */
+.admin-login h2 {
+  color: #701b56;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/*  Labels */
+.admin-login label {
+  display: block;
+  text-align: left;
+  color: #701b56;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+/*  Inputs */
+.admin-login input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 2px solid #d3a6c8;
+  margin-bottom: 18px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.admin-login input:focus {
+  border-color: #701b56;
+  box-shadow: 0 0 8px rgba(112, 27, 86, 0.3);
+}
+
+/*  Button */
+.admin-login button {
+  background-color: #701b56;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.admin-login button:hover {
+  background-color: #8a1f6b;
+  transform: translateY(-2px);
+}
+
+/*  Responsive */
+@media (max-width: 480px) {
+  .admin-login form {
+    padding: 30px 25px;
+  }
+
+  .admin-login h2 {
+    font-size: 1.7rem;
+  }
+}

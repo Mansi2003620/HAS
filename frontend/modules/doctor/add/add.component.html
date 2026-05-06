@@ -1,0 +1,74 @@
+<div class="add-doctor-page">
+  <div class="add-doctor-container">
+    <div class="add-doctor-card">
+      <h2>Add Doctor</h2>
+
+      <form (ngSubmit)="onSubmit()" #doctorForm="ngForm">
+        <!-- User Info -->
+        <div class="form-group mb-3">
+          <label>Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="doctor.user.name"
+            name="name"
+            required
+          />
+        </div>
+
+        <div class="form-group mb-3">
+          <label>Email:</label>
+          <input
+            type="email"
+            class="form-control"
+            [(ngModel)]="doctor.user.email"
+            name="email"
+            required
+          />
+        </div>
+
+        <div class="form-group mb-3">
+          <label>Password:</label>
+          <input
+            type="password"
+            class="form-control"
+            [(ngModel)]="doctor.user.password"
+            name="password"
+            required
+          />
+        </div>
+
+        <!-- Doctor Info -->
+        <div class="form-group mb-3">
+          <label>Specialization:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="doctor.specialization"
+            name="specialization"
+            required
+          />
+        </div>
+
+        <div class="form-group mb-3">
+          <label>Experience (Years):</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="doctor.experience"
+            name="experience"
+            required
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="btn"
+          [disabled]="!doctorForm.valid"
+        >
+          Add Doctor
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

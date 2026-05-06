@@ -1,0 +1,57 @@
+<div class="edit-doctor-page">
+  <div class="edit-doctor-container">
+    <div class="edit-doctor-card">
+      <h2>Edit Doctor</h2>
+
+      <form (ngSubmit)="onUpdate()" #editForm="ngForm">
+        <div class="form-group mb-3">
+          <label>Name:</label>
+          <input
+            type="text"
+            [(ngModel)]="doctor.name"
+            name="name"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div class="form-group mb-3">
+          <label>Specialization:</label>
+          <input
+            type="text"
+            [(ngModel)]="doctor.specialization"
+            name="specialization"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div class="form-group mb-3">
+          <label>Email:</label>
+          <input
+            type="email"
+            [(ngModel)]="doctor.email"
+            name="email"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div class="form-group mb-3">
+          <label>Phone:</label>
+          <input
+            type="text"
+            [(ngModel)]="doctor.phone"
+            name="phone"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn" [disabled]="!editForm.valid">
+          Update
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

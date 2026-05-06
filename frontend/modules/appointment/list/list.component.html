@@ -1,0 +1,58 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="mb-0">
+      
+      {{ isFilteredView 
+          ? (role === 'doctor' 
+              ? 'Doctor Appointments' 
+              : 'Patient Appointments') 
+          : 'All Appointments (Admin View)' }}
+    </h3>
+  </div>
+
+  <table
+    class="table table-hover table-bordered table-striped"
+    *ngIf="appointments.length > 0; else noData"
+  >
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Patient ID</th>
+        <th>Doctor ID</th>
+        <th>Date & Time</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let a of appointments">
+        <td>{{ a.id }}</td>
+        <td>{{ a.patient?.id || a.patientId }}</td>
+        <td>{{ a.doctor?.id || a.doctorId }}</td>
+        <td>{{ a.appointmentDate | date:'medium' }}</td>
+        <td>
+          <span [ngClass]="{
+            'text-success': a.status === 'Booked',
+            'text-danger': a.status === 'Cancelled'
+          }">
+            {{ a.status }}
+          </span>
+        </td>
+        <td>
+          <button class="btn btn-sm btn-primary me-2" (click)="onEdit(a.id)">Edit</button>
+          <button class="btn btn-sm btn-danger" (click)="cancel(a.id)">Cancel</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noData>
+    <div class="alert alert-info text-center mt-4">
+      No appointments found
+      {{ isFilteredView 
+          ? (role === 'doctor' ? 'for this doctor.' : 'for this patient.') 
+          : 'in the system.' }}
+    </div>
+  </ng-template>
+</div>

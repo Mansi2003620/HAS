@@ -1,0 +1,109 @@
+/*  Home Container  */
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('/assets/images/HAS.png') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+/*  Centered Content */
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color:  #701b56;
+  padding: 30px;
+}
+
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color:#701b56;
+  font-weight: 700;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.content p {
+  font-size: 1.3rem;
+  margin-bottom: 45px;
+  color: #701b56;
+  font-weight: 500;
+}
+
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn,
+.admin-btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+}
+
+.btn-login {
+  background-color: #8a1f6b;
+}
+.btn-login:hover {
+  background-color: #a13b88;
+  transform: translateY(-3px);
+}
+
+/*  Signup Button  */
+.btn-signup {
+  background-color: #9f4fa0;
+}
+.btn-signup:hover {
+  background-color: #b363b5;
+  transform: translateY(-3px);
+}
+
+/*  Admin Login Button */
+.admin-btn {
+  background-color: #701b56;
+  border: 2px solid #b46ba8;
+}
+.admin-btn:hover {
+  background-color: #8a1f6b;
+  transform: translateY(-3px);
+}
+
+/*  Responsive Design */
+@media (max-width: 768px) {
+  .content h1 {
+    font-size: 2.2rem;
+  }
+
+  .content p {
+    font-size: 1rem;
+  }
+
+  .btn, .admin-btn {
+    font-size: 16px;
+    padding: 10px 24px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

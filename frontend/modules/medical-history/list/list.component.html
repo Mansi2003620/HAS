@@ -1,0 +1,42 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="mb-0">
+      
+      {{ isPatientView ? 'Medical History (Patient View)' : 'All Medical Histories (Admin View)' }}
+    </h3>
+
+    
+  </div>
+
+  <table
+    class="table table-hover table-bordered table-striped"
+    *ngIf="medicalHistories.length > 0; else noData"
+  >
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Diagnosis</th>
+        <th scope="col">Notes</th>
+        <th scope="col">Record Date</th>
+        <th *ngIf="!isPatientView" scope="col">Patient ID</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let m of medicalHistories; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ m.diagnosis }}</td>
+        <td>{{ m.notes || '—' }}</td>
+        <td>{{ m.recorddate | date: 'mediumDate' }}</td>
+        <td *ngIf="!isPatientView">{{ m.patient?.id || m.patientId }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noData>
+    <div class="alert alert-info text-center mt-4">
+      No medical history records found
+      {{ isPatientView ? 'for this patient.' : 'in the system.' }}
+    </div>
+  </ng-template>
+</div>
