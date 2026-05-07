@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -22,7 +22,7 @@ export class AddComponent {
      let url=''
      if(this.user.role === 'PATIENT'){
        payload={...payload,...this.patient};
-       url = '${environment.apiUrl}/patients/register'; 
+       url = `${environment.apiUrl}/patients/register`; 
      }
      else if(this.user.role === 'DOCTOR'){
        payload={...payload,...this.doctor};
@@ -30,7 +30,7 @@ export class AddComponent {
      }
     console.log('final Payload:',payload);
  
-     this.http.post('${environment.apiUrl}/users/register',payload).subscribe({
+     this.http.post(`${environment.apiUrl}/users/register`,payload).subscribe({
        next:(res) =>{
          console.log('Registartion successfull',res);
          alert('Registration successfull');

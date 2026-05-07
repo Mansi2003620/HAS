@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -22,7 +23,7 @@ export class DashboardComponent implements OnInit {
     showDashboards = false;
 
   
-  private baseUrl = '${environment.apiUrl}';
+  private baseUrl = `${environment.apiUrl}`;
   
 
   constructor(private http: HttpClient, private router: Router) {}

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { PrescriptionService } from '../../../services/prescription.service';
 import { MedicalHistoryService } from '../../../services/medical-history.service';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,7 +21,7 @@ export class DashboardComponent implements OnInit {
   medicalHistories: any[] = [];
   
   // private baseUrl = 'http://localhost:8080';
-  private baseUrl = '${environment.apiUrl}';
+  private baseUrl = `${environment.apiUrl}`;
   
 
   constructor(

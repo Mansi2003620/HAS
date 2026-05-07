@@ -25,7 +25,7 @@ export class LoginComponent {
       'Content-Type': 'application/json'
     });
 
-    this.http.post('${environment.apiUrl}/users/login', this.loginData, { headers }).subscribe({
+    this.http.post(`${environment.apiUrl}/users/login`, this.loginData, { headers }).subscribe({
       next: (response: any) => {
         console.log('Login successful:', response);
 
