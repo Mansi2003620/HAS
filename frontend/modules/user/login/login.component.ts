@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PatientService } from '../../../services/patient.service'; 
+import { environment } from '../../../src/environments/environment';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -23,7 +25,7 @@ export class LoginComponent {
       'Content-Type': 'application/json'
     });
 
-    this.http.post('http://localhost:8080/users/login', this.loginData, { headers }).subscribe({
+    this.http.post('${environment.apiUrl}/users/login', this.loginData, { headers }).subscribe({
       next: (response: any) => {
         console.log('Login successful:', response);
 
@@ -32,7 +34,7 @@ export class LoginComponent {
 
         if (response.role === 'patient') {
 
-          this.http.get(`http://localhost:8080/patients/user/${response.id}`).subscribe({
+          this.http.get(`${environment.apiUrl}/patients/user/${response.id}`).subscribe({
             next: (patientData: any) => {
               console.log('✅ Loaded patient record:', patientData);
 

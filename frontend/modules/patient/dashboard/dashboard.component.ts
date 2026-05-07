@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { PatientService } from '../../../services/patient.service';
+import { environment } from '../../../src/environments/environment';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -59,7 +61,7 @@ export class DashboardComponent implements OnInit {
 
   // 🗓 Load appointments for this patient
 loadAppointments(patientId: number): void {
-  this.http.get<any[]>(`http://localhost:8080/api/appointments/patient/${patientId}`).subscribe({
+  this.http.get<any[]>(`${environment.apiUrl}/api/appointments/patient/${patientId}`).subscribe({
     next: (appointments) => {
       console.log(' Raw appointments from backend:', appointments);
 
@@ -102,7 +104,7 @@ loadAppointments(patientId: number): void {
 
   viewMedicalHistory() {
     this.http
-      .get<any[]>(`http://localhost:8080/api/medicalhist/patient/${this.patient.id}`)
+      .get<any[]>(`${environment.apiUrl}/api/medicalhist/patient/${this.patient.id}`)
       .subscribe({
         next: (data) => {
           this.medicalHistories = data;
@@ -118,7 +120,7 @@ loadAppointments(patientId: number): void {
 
   viewPrescription(medicalHistoryId: number) {
     this.http
-      .get<any[]>(`http://localhost:8080/api/presciption/history/${medicalHistoryId}`)
+      .get<any[]>(`${environment.apiUrl}/api/presciption/history/${medicalHistoryId}`)
       .subscribe({
         next: (data) => {
           this.prescriptions = data;
@@ -137,7 +139,7 @@ loadAppointments(patientId: number): void {
 }
   onCancel(id: number): void {
     if (confirm('Are you sure you want to cancel this appointment?')) {
-      this.http.put(`http://localhost:8080/api/appointments/${id}/cancel`, {}).subscribe({
+      this.http.put(`${environment.apiUrl}/api/appointments/${id}/cancel`, {}).subscribe({
         next: () => {
           console.log('✅ Appointment cancelled successfully.');
           const appt = this.appointments.find((a) => a.id === id);

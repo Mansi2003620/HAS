@@ -22,15 +22,15 @@ export class AddComponent {
      let url=''
      if(this.user.role === 'PATIENT'){
        payload={...payload,...this.patient};
-       url = 'http://localhost:8080/patients/register'; 
+       url = '${environment.apiUrl}/patients/register'; 
      }
      else if(this.user.role === 'DOCTOR'){
        payload={...payload,...this.doctor};
-       url='http://localhost:8080/doctors/register'; 
+       url='${environment.apiUrl}/doctors/register'; 
      }
     console.log('final Payload:',payload);
  
-     this.http.post('http://localhost:8080/users/register',payload).subscribe({
+     this.http.post('${environment.apiUrl}/users/register',payload).subscribe({
        next:(res) =>{
          console.log('Registartion successfull',res);
          alert('Registration successfull');

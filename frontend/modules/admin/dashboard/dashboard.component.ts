@@ -22,7 +22,8 @@ export class DashboardComponent implements OnInit {
     showDashboards = false;
 
   
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = '${environment.apiUrl}';
+  
 
   constructor(private http: HttpClient, private router: Router) {}
 
