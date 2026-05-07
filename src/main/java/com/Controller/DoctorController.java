@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Entity.Doctor;
 import com.Service.DoctorService;
-@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/doctors")
 public class DoctorController {

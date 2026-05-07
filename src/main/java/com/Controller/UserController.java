@@ -22,7 +22,6 @@ import com.Entity.User;
 import com.Repository.UserRepository;
 import com.Service.UserService;
 
-@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/users")
 public class UserController {

@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.Entity.MedicalHistory;
 import com.Service.MedicalHistoryService;
 
-@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("api/medicalhist")
 public class MedicalHistoryController {

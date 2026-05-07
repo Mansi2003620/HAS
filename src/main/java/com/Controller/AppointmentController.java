@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.Entity.Appointment;
 import com.Service.AppointmentService;
 
-@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/appointments")
 
