@@ -16,6 +16,8 @@ import com.Entity.Prescription;
 import com.Service.PrescriptionService;
 
 import jakarta.persistence.Table;
+@CrossOrigin(origins = "https://has-pviv.onrender.com")
+
 @RestController
 
 @RequestMapping("api/presciption")

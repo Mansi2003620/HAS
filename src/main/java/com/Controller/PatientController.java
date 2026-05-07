@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Entity.Patient;
 import com.Service.PatientService;
+@CrossOrigin(origins = "https://has-pviv.onrender.com")
 
 @RestController
 @RequestMapping("/patients")

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Entity.MedicalHistory;
 import com.Service.MedicalHistoryService;
+@CrossOrigin(origins = "https://has-pviv.onrender.com")
 
 @RestController
 @RequestMapping("api/medicalhist")

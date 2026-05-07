@@ -21,6 +21,7 @@ import com.Entity.Patient;
 import com.Entity.User;
 import com.Repository.UserRepository;
 import com.Service.UserService;
+@CrossOrigin(origins = "https://has-pviv.onrender.com")
 
 @RestController
 @RequestMapping("/users")
