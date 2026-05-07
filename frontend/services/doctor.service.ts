@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DoctorService {
-  private baseUrl = 'http://localhost:8080/doctors';
+  // private baseUrl = 'http://localhost:8080/doctors';
+    private baseUrl = `${environment.apiUrl}/doctors`;
+
   private doctor: any; // ✅ local cache for dashboard use
 
   constructor(private http: HttpClient) {}
