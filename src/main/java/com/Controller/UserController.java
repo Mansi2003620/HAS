@@ -22,7 +22,7 @@ import com.Entity.User;
 import com.Repository.UserRepository;
 import com.Service.UserService;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/users")
 public class UserController {

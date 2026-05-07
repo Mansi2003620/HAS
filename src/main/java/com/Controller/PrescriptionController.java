@@ -16,7 +16,7 @@ import com.Entity.Prescription;
 import com.Service.PrescriptionService;
 
 import jakarta.persistence.Table;
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RestController
 
 @RequestMapping("api/presciption")
